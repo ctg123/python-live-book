@@ -1,0 +1,122 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Python Live Book",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Expressions Recap looking at variables\nWe will use JupyterLab or Google Colab to work through examples and discussions throughout the lectures and lab periods. They are a wonderful resource, with the benefit of not requiring you to install any specific distribution of Python, or any specific libraries.\nThis is a book created from markdown and executable code.\n• A line of code generally contains a statement\n• Statements indicate the task that we want the computer to perform\nx = 2\nThis is a recommended programming style for Python: PEP8 Style Guide",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "intro.html#expressions-recap-looking-at-variables",
+    "href": "intro.html#expressions-recap-looking-at-variables",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "x is termed an identifier of a variable\n= is the assignment symbol\n2 is an integer that we are assigning to the variable identified by ‘x’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote the spaces around operators and the assignment symbol",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#variable-names",
+    "href": "intro.html#variable-names",
+    "title": "1  Introduction",
+    "section": "1.2 Variable Names",
+    "text": "1.2 Variable Names\n\nCase-sensitive!\n\n\n\n\n\n\n\n\nvariable names may contain letters, digits, and underscores\ncannot begin with a number",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-types",
+    "href": "intro.html#data-types",
+    "title": "1  Introduction",
+    "section": "1.3 Data Types",
+    "text": "1.3 Data Types\n\nEvery variable has a type\nPython makes it easy to discover the type of variables with the built-in command type\n\n\n\n\n\n\n\n\n\n\n\n\n\ntype is a function whose argument is y and whose output is float.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#arithmetic-operations",
+    "href": "intro.html#arithmetic-operations",
+    "title": "1  Introduction",
+    "section": "1.4 Arithmetic Operations",
+    "text": "1.4 Arithmetic Operations\nThe division operator / always returns a float, even if the operands are integers. The floor division operator // returns the integer part of the division result. The modulus operator % gives the remainder after division. Python follows the PEMDAS order of operations (Parentheses, Exponents, Multiplication and Division, Addition and Subtraction).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx raised to the power of y\n\n\n\n\n\n\nThe integer floor operation\n\n\n\n\n\n\nThe modulus (remainder) operation\n\n\n\n\n\n\n\n1.4.1 Operator precedence rules\n\nParentheses evaluate first – If nested, innermost parentheses evaluate first\nExponents evaluate next, in order of right-to-left\nMultiplication, division, and modulus evaluate next, in order of left-to-right\nAddition and subtraction evaluate last, in order of left-to-right\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1.4.2 Use parentheses to avoid ambiguity",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#operator-precedence-rules",
+    "href": "intro.html#operator-precedence-rules",
+    "title": "1  Introduction",
+    "section": "1.5 Operator precedence rules",
+    "text": "1.5 Operator precedence rules\n\nParentheses evaluate first – If nested, innermost parentheses evaluate first\nExponents evaluate next, in order of right-to-left\nMultiplication, division, and modulus evaluate next, in order of left-to-right\nAddition and subtraction evaluate last, in order of left-to-right",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#strings-intro",
+    "href": "intro.html#strings-intro",
+    "title": "1  Introduction",
+    "section": "1.5 Strings Intro",
+    "text": "1.5 Strings Intro\n\nThe string type holds sequence of characters\nThe print function displays strings on the screen\nThe f-string stands for formatted string literals, a more readable way to include variables in strings\n\n\n\n\n\n\n\nStrings can span multiple lines via escape characters\n\n\n\n\n\n\nBasic f-string example",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#obtaining-user-input",
+    "href": "intro.html#obtaining-user-input",
+    "title": "1  Introduction",
+    "section": "1.6 Obtaining user input",
+    "text": "1.6 Obtaining user input\n\nThe input function allows the user to supply a value\nThe resulting value is always a string\n\nname = input(\"Please enter your name: \")\nprint(f\"You entered: {name}\")\n\nTo run the cells in the Jupyterlite environment, you can use SHIFT + ENTER.\n\n\n\nThis code block prompts the user to enter their name and then prints a greeting message.The input function is used to get user input, and the or “Guest” part ensures that if the user doesn’t enter anything, the default name “Guest” is used.\nname = input(\"Enter your name: \") or \"Guest\"\n# The f-string is used to format the greeting message with the user's name.\nprint(f\"Hello, {name}!\")",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#casting-data-types-via-int",
+    "href": "intro.html#casting-data-types-via-int",
+    "title": "1  Introduction",
+    "section": "1.7 Casting data types via int",
+    "text": "1.7 Casting data types via int\ny = input(\"Please enter your age\")\nz = int(y)\nprint(f\"The variable z is {z}, which is of data type: {type(z)}\")",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  }
+]

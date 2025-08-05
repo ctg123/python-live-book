@@ -1,0 +1,275 @@
+---
+format: live-html
+pyodide:
+packages:
+---
+
+# Introduction
+
+We will use JupyterLab or Google Colab to work through examples and discussions throughout the lectures and lab periods. They are a wonderful resource, with the benefit of not requiring you to install any specific distribution of Python, or any specific libraries.
+
+This is a book created from markdown and executable code.
+
+## Expressions Recap looking at variables
+
+• A line of code generally contains a statement
+
+• Statements indicate the task that we want the computer to perform
+
+``` {python}
+x = 2
+```
+
+-   x is termed an *identifier* of a variable
+
+-   = is the *assignment* symbol
+
+-   2 is an integer that we are assigning to the variable identified by **‘x’**
+
+```{pyodide}
+x = 45
+y = 36
+z = x + y
+```
+
+```{pyodide}
+z
+```
+
+> Note the spaces around operators and the assignment symbol
+
+This is a recommended programming style for Python: [PEP8 Style Guide](https://peps.python.org/pep-0008/)
+
+```{pyodide}
+# this is harder to read
+z=x+y
+
+z
+```
+
+## Variable Names
+
+-   Case-sensitive!
+
+```{pyodide}
+X = 12
+x = 34
+print(f"X is {X} and x is {x}")
+X, x
+```
+
+-   variable names may contain letters, digits, and underscores
+-   cannot begin with a number
+
+```{pyodide}
+xyz_123 = 56
+123_xyz = 56
+```
+
+## Data Types
+
+-   Every variable has a type
+-   Python makes it easy to discover the type of variables with the built-in command type
+
+```{pyodide}
+x = 78
+type(x)
+```
+
+```{pyodide}
+y = 12.34
+type(y)
+```
+
+type is a *function* whose *argument* is y and whose output is float.
+
+## Arithmetic Operations
+
+The division operator `/` always returns a float, even if the operands are integers. The floor division operator `//` returns the integer part of the division result. The modulus operator `%` gives the remainder after division. Python follows the `PEMDAS` order of operations (Parentheses, Exponents, Multiplication and Division, Addition and Subtraction).
+
+```{pyodide}
+# create two variables
+x = 2
+y = 3
+# Addition
+x + y
+```
+
+```{pyodide}
+# Subtraction
+y - x
+```
+
+```{pyodide}
+# Multplication
+x * y
+```
+
+```{pyodide}
+# Division
+y / x
+```
+
+x raised to the power of y
+```{pyodide}
+x ** y
+```
+
+The integer floor operation
+```{pyodide}
+y // x
+```
+
+The modulus (remainder) operation
+```{pyodide}
+y % x
+```
+
+### Operator precedence rules
+
+- Parentheses evaluate first
+– If nested, innermost parentheses evaluate first
+- Exponents evaluate next, in order of right-to-left
+- Multiplication, division, and modulus evaluate next, in order of left-to-right
+- Addition and subtraction evaluate last, in order of left-to-right
+
+```{pyodide}
+x = 30
+y = 5
+z = 25
+x * y + z
+```
+
+```{pyodide}
+x * ( y + z )
+```
+
+### Use parentheses to avoid ambiguity
+
+```{pyodide}
+2 ** 3 ** 4
+```
+
+```{pyodide}
+(2 ** 3) ** 4
+```
+
+```{pyodide}
+2 ** (3 ** 4)
+```
+
+## Strings Intro
+
+- The string type holds sequence of characters
+- The print function displays strings on the screen
+- The `f-string` stands for formatted string literals, a more readable way to include variables
+in strings
+
+```{pyodide}
+x = 'Python is cool'
+print(x)
+```
+
+Strings can span multiple lines via escape characters
+```{pyodide}
+x = 'Python is lit \n and is so cool! '
+print(x)
+```
+Basic f-string example
+```{pyodide}
+# Basic f-string example
+student_name = "Chaance"
+grade_level = 9
+
+print(f"Welcome {student_name}, you are in grade {grade_level}!")
+```
+
+```{pyodide}
+# student info examples
+current_semester = "Summer 2025"
+college_hours = 6
+high_school_gpa = 3.5
+
+print(f"This {current_semester}, you've earned {college_hours} college credit hours!")
+print(f"Your current GPA is {high_school_gpa}")
+```
+
+```{pyodide}
+# Compare old string formatting vs f-strings
+student = "John"
+credits = 18
+
+# Old way (don't use this)
+print("Student: " + student + " has " + str(credits) + " credits")
+# Modern way with f-strings (use this!)
+print(f"Student: {student} has {credits} credits")
+```
+
+```{pyodide}
+# F-strings with formatting options
+percentage = 0.875
+print(f"Graduation rate: {percentage:.1%}") # Shows as 87.5%
+gpa = 3.14159
+print(f"GPA: {gpa:.2f}") # Shows as 3.14
+```
+
+```{pyodide}
+# Multi-line f-strings for reports
+student_id = "123456"
+name = "Chaance"
+total_credits = 18
+max_credits = 26
+# This would print an example report card
+print(f"""
+=== GRADE PROGRESS REPORT ===
+Student Name: {name}
+Student ID: {student_id}
+Total Credits Earned: {total_credits}
+Credits Remaining: {max_credits - total_credits}
+Completion Rate: {(total_credits / max_credits) * 100:.1f}%
+""")
+```
+
+## Obtaining user input
+- The input function allows the user to supply a value
+- The resulting value is always a string
+
+```python
+name = input("Please enter your name: ")
+print(f"You entered: {name}")
+```
+
+> To run the cells in the Jupyterlite environment, you can use `SHIFT + ENTER`.
+
+<iframe
+  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python"
+  width="100%"
+  height="350%"
+></iframe>
+
+This code block prompts the user to enter their name and then prints a greeting message.The input function is used to get user input, and the or "Guest" part ensures that if the user doesn't enter anything, the default name "Guest" is used.
+
+```python
+name = input("Enter your name: ") or "Guest"
+# The f-string is used to format the greeting message with the user's name.
+print(f"Hello, {name}!")
+```
+<iframe
+  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python"
+  width="100%"
+  height="350%"
+></iframe>
+
+## Casting data types via int
+
+```python
+y = input("Please enter your age")
+z = int(y)
+print(f"The variable z is {z}, which is of data type: {type(z)}")
+```
+<iframe
+  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python"
+  width="100%"
+  height="350%"
+></iframe>
+
