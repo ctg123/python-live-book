@@ -20,26 +20,6 @@
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
     "objectID": "intro.html#expressions-recap-looking-at-variables",
     "href": "intro.html#expressions-recap-looking-at-variables",
     "title": "1  Introduction",
@@ -80,16 +60,6 @@
     ]
   },
   {
-    "objectID": "intro.html#operator-precedence-rules",
-    "href": "intro.html#operator-precedence-rules",
-    "title": "1  Introduction",
-    "section": "1.5 Operator precedence rules",
-    "text": "1.5 Operator precedence rules\n\nParentheses evaluate first – If nested, innermost parentheses evaluate first\nExponents evaluate next, in order of right-to-left\nMultiplication, division, and modulus evaluate next, in order of left-to-right\nAddition and subtraction evaluate last, in order of left-to-right",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
     "objectID": "intro.html#strings-intro",
     "href": "intro.html#strings-intro",
     "title": "1  Introduction",
@@ -104,7 +74,7 @@
     "href": "intro.html#obtaining-user-input",
     "title": "1  Introduction",
     "section": "1.6 Obtaining user input",
-    "text": "1.6 Obtaining user input\n\nThe input function allows the user to supply a value\nThe resulting value is always a string\n\nname = input(\"Please enter your name: \")\nprint(f\"You entered: {name}\")\n\nTo run the cells in the Jupyterlite environment, you can use SHIFT + ENTER.\n\n\n\nThis code block prompts the user to enter their name and then prints a greeting message.The input function is used to get user input, and the or “Guest” part ensures that if the user doesn’t enter anything, the default name “Guest” is used.\nname = input(\"Enter your name: \") or \"Guest\"\n# The f-string is used to format the greeting message with the user's name.\nprint(f\"Hello, {name}!\")",
+    "text": "1.6 Obtaining user input\n\nThe input function allows the user to supply a value\nThe resulting value is always a string\n\nname = input(\"Please enter your name: \")\nprint(f\"You name is {name}!\")\n\nNote: While the rest of this site runs Python using Pyodide, browser-based environments like Quarto don’t support input() for user interaction. To demonstrate interactive input, we use Trinket.io, which allows users to type responses during program execution.\n\n\n\nThis code block prompts the user to enter their name and then prints a greeting message.The input function is used to get user input, and the or “Guest” part ensures that if the user doesn’t enter anything, the default name “Guest” is used.\nname = input(\"Enter your name: \") or \"Guest\"\n# The f-string is used to format the greeting message with the user's name.\nprint(f\"Hello, {name}!\")",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -117,6 +87,106 @@
     "text": "1.7 Casting data types via int\ny = input(\"Please enter your age\")\nz = int(y)\nprint(f\"The variable z is {z}, which is of data type: {type(z)}\")",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#boolean-expressions",
+    "href": "intro.html#boolean-expressions",
+    "title": "1  Introduction",
+    "section": "1.8 Boolean expressions",
+    "text": "1.8 Boolean expressions\nBoolean expressions evaluate to keywords True or False:\n\ngreater than: &gt;\nless than: &lt;\ngreater than or equal to: &gt;=\nless than or equal to: &lt;=\nis equal to: ==\nis not equal to: !=",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#conditional-execution-if-statement",
+    "href": "intro.html#conditional-execution-if-statement",
+    "title": "1  Introduction",
+    "section": "1.9 Conditional execution: if statement",
+    "text": "1.9 Conditional execution: if statement\nThe if statement allows your program’s execution to depend on the state of the program",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#comments",
+    "href": "intro.html#comments",
+    "title": "1  Introduction",
+    "section": "1.10 Comments",
+    "text": "1.10 Comments\n\nComments allow you to document your code inline\nDocumentation allows others to understand the purpose of different sections of your program\nComments are indicated with the # symbol, and can appear above or to the right of your code",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#variables-values-and-types",
+    "href": "intro.html#variables-values-and-types",
+    "title": "1  Introduction",
+    "section": "1.11 Variables, values, and types",
+    "text": "1.11 Variables, values, and types\n\nVariables refer to objects\nObjects have both a value and a type\nIn the expression x = 78, x is a variable whose value is 78 and whose type is int\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1.11.1 Dynamic typing\nPython determines your variable’s types during program execution",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html",
+    "href": "control-statements-program-dev.html",
+    "title": "2  Control statements and program development",
+    "section": "",
+    "text": "2.1 Objectives\nIn this module, you’ll learn:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#objectives",
+    "href": "control-statements-program-dev.html#objectives",
+    "title": "2  Control statements and program development",
+    "section": "",
+    "text": "Decide whether to execute actions with conditional statements if, if … else and if -&gt; elif -&gt; else\nExecute statements repeatedly with for and while.\nShorten assignment expressions with augmented assignments.\nUse the for statement and the built-in range function to repeat actions for a sequence of values.\nPerform sentinel-controlled repetition with while.\nLearn problem-solving skills: understanding problem requirements, dividing problems into\nsmaller pieces, developing algorithms to solve problems and implementing those algorithms in\ncode.\nDevelop algorithms through the process of top-down, step-by-step refinement.\nCreate compound conditions with the Boolean operators and, or and not .\nStop looping with break statements.\nForce the next iteration of a loop with continue .\nUse some functional-style programming features to write scripts that are more concise, clearer, easier to debug and easier to parallelize.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#control-statements",
+    "href": "control-statements-program-dev.html#control-statements",
+    "title": "2  Control statements and program development",
+    "section": "2.2 Control statements",
+    "text": "2.2 Control statements\n\nComputer programs execute sequentially\nControl statements are able to alter the sequence of executions",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#selection-statements",
+    "href": "control-statements-program-dev.html#selection-statements",
+    "title": "2  Control statements and program development",
+    "section": "2.3 Selection statements",
+    "text": "2.3 Selection statements\n\nif\nif else\nif elif else\n\n\n\nAn example of the if elif else block:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#conditional-expressions",
+    "href": "control-statements-program-dev.html#conditional-expressions",
+    "title": "2  Control statements and program development",
+    "section": "2.4 Conditional Expressions",
+    "text": "2.4 Conditional Expressions\n\n2.4.1 Expressions evaluate to either True or False\n\nNon-zero numbers evaluate to True\nNon-empty strings evaluate to True\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.4.2 Suite indentation\n\nThe block under each condition is termed a suite\nPython relies on proper indentation for its syntax\n\n\n\n\n\n\n\n\n\n2.4.3 Conditional expressions may be written in one line of code",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

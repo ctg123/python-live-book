@@ -236,16 +236,12 @@ Completion Rate: {(total_credits / max_credits) * 100:.1f}%
 
 ```python
 name = input("Please enter your name: ")
-print(f"You entered: {name}")
+print(f"You name is {name}!")
 ```
 
-> To run the cells in the Jupyterlite environment, you can use `SHIFT + ENTER`.
+> Note: While the rest of this site runs Python using Pyodide, browser-based environments like Quarto don't support input() for user interaction. To demonstrate interactive input, we use [Trinket.io](https://trinket.io/), which allows users to type responses during program execution.
 
-<iframe
-  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python"
-  width="100%"
-  height="350%"
-></iframe>
+<iframe src="https://trinket.io/embed/python3/0ed725bd873d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 This code block prompts the user to enter their name and then prints a greeting message.The input function is used to get user input, and the or "Guest" part ensures that if the user doesn't enter anything, the default name "Guest" is used.
 
@@ -254,11 +250,8 @@ name = input("Enter your name: ") or "Guest"
 # The f-string is used to format the greeting message with the user's name.
 print(f"Hello, {name}!")
 ```
-<iframe
-  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python"
-  width="100%"
-  height="350%"
-></iframe>
+
+<iframe src="https://trinket.io/embed/python3/bf4dea53f5e5" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 ## Casting data types via int
 
@@ -267,9 +260,84 @@ y = input("Please enter your age")
 z = int(y)
 print(f"The variable z is {z}, which is of data type: {type(z)}")
 ```
-<iframe
-  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python"
-  width="100%"
-  height="350%"
-></iframe>
+<iframe src="https://trinket.io/embed/python3/401a6780026a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+## Boolean expressions
+
+Boolean expressions evaluate to keywords `True` or `False`:
+
+- greater than: >
+- less than: <
+- greater than or equal to: >=
+- less than or equal to: <=
+- is equal to: ==
+- is not equal to: !=
+
+```{pyodide}
+x = 12
+y = 34
+z = x > y
+print(z)
+```
+
+## Conditional execution: `if statement`
+
+The `if statement` allows your program’s execution to depend on the state of the program
+
+```{pyodide}
+x = 44
+y = 55
+
+if x == y:
+  print("These numbers are the same!")
+
+if x > y:
+  print("x is bigger than y")
+
+if x < y:
+  print("x is smaller than y")
+```
+## Comments
+- Comments allow you to document your code inline
+- Documentation allows others to understand the purpose of different sections of your program
+- Comments are indicated with the # symbol, and can appear above or to the right of your code
+
+```{pyodide}
+# set the variables
+x = 44
+y = 55
+
+# check if x is bigger than y
+if x > y:
+  print("x is bigger than y") # display a message to the user if x is bigger than y
+elif x < y:
+  print("x is less than y") # display a message to the user if x is lesser than y
+```
+## Variables, values, and types
+
+- Variables refer to objects
+- Objects have both a value and a type
+- In the expression `x = 78`, x is a variable whose value is 78 and whose type is int
+
+```{pyodide}
+x = 3.14156
+print("The value of x is ", x)
+print("The type of x is", type(x))
+```
+
+```{pyodide}
+ x = '3.14156'
+print("The value of x is ", x)
+print("The type of x is", type(x))
+```
+
+### Dynamic typing
+
+Python determines your variable’s types during program execution
+
+```{pyodide}
+x = 10
+y = 3
+z = x/y
+print("The type of z is", type(z))
+```

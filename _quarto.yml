@@ -15,6 +15,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - control-statements-program-dev.qmd
     - summary.qmd
     - references.qmd
 

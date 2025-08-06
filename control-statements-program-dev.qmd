@@ -1,0 +1,97 @@
+---
+format: live-html
+pyodide:
+packages:
+---
+
+# Control statements and program development 
+ 
+## Objectives
+
+In this module, you’ll learn:
+
+-   Decide whether to execute actions with conditional statements if, if ... else and if -\> elif -\> else
+
+-   Execute statements repeatedly with for and while.
+
+-   Shorten assignment expressions with augmented assignments.
+
+-   Use the for statement and the built-in range function to repeat actions for a sequence of values.
+
+-   Perform sentinel-controlled repetition with while.
+
+-   Learn problem-solving skills: understanding problem requirements, dividing problems into
+
+    smaller pieces, developing algorithms to solve problems and implementing those algorithms in
+
+    code.
+
+-   Develop algorithms through the process of top-down, step-by-step refinement.
+
+-   Create compound conditions with the Boolean operators and, or and not .
+
+-   Stop looping with break statements.
+
+-   Force the next iteration of a loop with continue .
+
+-   Use some functional-style programming features to write scripts that are more concise, clearer, easier to debug and easier to parallelize.
+
+## Control statements
+- Computer programs execute sequentially
+- Control statements are able to alter the sequence of executions
+
+## Selection statements
+- ***if***
+- ***if else***
+- ***if elif else***
+
+<iframe src="https://trinket.io/embed/python3/c1acb1c856b3" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+An example of the if elif else block:
+
+<iframe src="https://trinket.io/embed/python3/cff80103ccf1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+## Conditional Expressions
+
+### Expressions evaluate to either True or False
+- Non-zero numbers evaluate to `True`
+- Non-empty strings evaluate to `True`
+
+```{pyodide}
+x = 12
+# x = 0 # uncomment this to observe the only value that leads to the condition being False
+
+if x:
+  print('Condition is True')
+else:
+  print('Condition is False')
+```
+
+```{pyodide}
+x = '' # this example to observe the only value that leads to the condition being False
+
+if x:
+  print('Condition is True')
+else:
+  print('Condition is False')
+```
+
+### Suite indentation
+- The block under each condition is termed a suite
+- Python relies on proper indentation for its syntax
+
+```{pyodide}
+x = 36
+if (x%2) == 0:
+  print('x is an even number \n')
+  print('x is divisible by 2 \n')
+  
+print('x has no remainder when divided into two parts \n')
+```
+
+### Conditional expressions may be written in one line of code
+```{pyodide}
+x = 36
+y = ('even' if (x%2)==0 else 'odd')
+print(f'y is {y}')
+```
