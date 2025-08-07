@@ -108,3 +108,194 @@ while price_of_netflix < 20:
     year = year + 1
     price_of_netflix = price_of_netflix * (1 + rate_of_increase)
 ```
+### Formatting strings to make numbers more readable
+
+* Note the leading ```f```, the ```{}```, and the string formatting character ```0.2f``` and ```0d``` in the above
+
+```{pyodide}
+rate_of_increase = 0.05
+price_of_netflix = 14.99
+year = 2022
+
+# The loop should continue until the condition is valid, once the price is over $20, the loop will break ...
+while price_of_netflix < 20:
+    print(f'A Netflix subscription costs {price_of_netflix:0.2f} in {year:0d}')
+    year = year + 1
+    price_of_netflix = price_of_netflix * (1 + rate_of_increase)
+```
+
+## The ```for``` loop
+* The most common type of iteration in Python
+* The ```for``` statement allows an action to be executed a _fixed_ number of times
+* NB: Python indexes from 0 (not 1)
+* The built-in ```range(x)``` function outputs all integers from ```0``` to ```x-1```
+
+```{pyodide}
+for i in range(10): # Note the argument of the function 
+    print(i)
+print('End of the first for-loop \n')
+
+
+my_first_list = [-3, 2, -5, 4, 0]
+print(f"My list is {my_first_list} which is of data type: {type(my_first_list)}")
+
+for item in my_first_list:
+    print(item)
+```
+
+## Iterables and lists
+* The sequence to the right of the ```for``` keyword must be an _iterable_
+* The most common type of iterable in Python is a _list_:
+
+```{pyodide}
+groceries = ['apples', 'bananas', 'milk', 'chicken', 'cheese'] # creates a list that a for loop can iterate over
+
+print(f"I have {len(groceries)} items in my grocery list.\n") # counts the number of items in the list
+for item in groceries:
+    print(f"- {item}")
+```
+
+## Augmented expressions
+* Adding and multiplying a set of numbers is a very common operation
+* The operators ```+=``` and ```*=``` facilitate iterative sums and products
+
+```{pyodide}
+running_sum = 0
+for i in [1,2,3,4,5]:
+    # increments the sum after the initial 0
+    running_sum += i
+    
+print(running_sum)
+```
+
+```{pyodide}
+running_product = 1
+for i in [1,2,3,4,5]:
+    running_product *= i
+    
+print(running_product)
+```
+
+## The ```break``` and ```continue``` statements
+* Python exits a ```while``` or ```for``` loop if it encounters a ```break``` statement
+* Python moves to the next iteration of the loop if it encounters a ```continue``` statement
+
+Example of the `break` statement:
+```python
+running_sum = 0
+for i in range(1000000):
+    num = int(input('Enter a number to add. Enter -1 to stop'))
+    if num!=-1:
+        running_sum += num
+    else:
+        break
+
+print('The sum of the entered numbers is', running_sum)
+```
+<iframe src="https://trinket.io/embed/python3/e019ba84b3de" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+Example of the `continue` statement. The following program will only add _positive_ numbers:
+
+```python
+running_sum = 0
+for i in range(1000000):
+    num = int(input('Enter a number to add. Enter 0 to stop'))
+    if num<0:
+        continue
+    elif num==0:
+        break
+    else:
+        running_sum += num
+
+print(f'The sum of the positive entered numbers is: {running_sum}')
+```
+<iframe src="https://trinket.io/embed/python3/e285ab1a91bc" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+## Logical operators
+Logical operators are used on conditional statements (either True or False). They perform Logical AND, Logical OR, and Logical NOT operations.
+
+| Operator | Description                                      | Example                        |
+|----------|--------------------------------------------------|--------------------------------|
+| `AND`    | Returns `True` if **both** statements are true   | `x < 5 and x < 10`             |
+| `OR`     | Returns `True` if **one** of the statements is true | `x < 5 or x < 4`            |
+| `NOT`    | Reverses the result; `False` if condition is true | `not(x < 5 and x < 10)`     |
+ 
+### Example of `AND` Operator
+The Logical ***AND*** operator returns True if both the operands are True else it returns False.
+```{pyodide}
+a = 10
+b = 10
+c = -10
+
+if a > 0 and b > 0:
+    print("The numbers are greater than 0")
+if a > 0 and b > 0 and c > 0:
+    print("The numbers are greater than 0")
+else:
+    print("Atleast one number is not greater than 0")
+```
+Example 2: The code checks if all variables a, b, and c evaluate to True, printing a message accordingly.
+
+```{pyodide}
+# Atleast one number has boolean value as False
+
+a = 10
+b = 12
+c = 0
+
+if a and b and c:
+    print("All the numbers have boolean value as True")
+    
+else:
+    print("Atleast one number has boolean value as False")
+```
+> **Note**: If the first expression is evaluated to be false while using the AND operator, then the further expressions are not evaluated.
+
+### Example of `OR` operator
+The Logical ***OR*** operator returns True if either of the operands is True.
+
+```{pyodide}
+a = 10
+b = -10
+c = 0
+
+if a > 0 or b > 0:
+    print("Either of the number is greater than 0")
+    
+else:
+    print("No number is greater than 0")
+    
+if b > 0 or c > 0:
+    print("Either of the number is greater than 0")
+    
+else:
+    print("No number is greater than 0")
+```
+The code checks if any of the variables a, b, or c has a boolean value as True; if so, it prints "At least one number has boolean value as True", otherwise, it prints "All the numbers have boolean value as False".
+
+```{pyodide}
+# Atleast one number has boolean value as True
+
+a = 10
+b = 12
+c = 0
+if a or b or c:
+    print("Atleast one number has boolean value as True")
+else:
+    print("All the numbers have boolean value as False")
+```
+### Example of `NOT` operator
+The Logical ***NOT*** operator works with a single boolean value. If the boolean value is True it returns False and vice-versa.
+
+```{pyodide}
+a = 10
+
+if not a:
+    print("Boolean value of a is True")
+    
+if not (a % 3 == 0 or a % 5 == 0):
+    print("10 is not divisible by either 3 or 5")
+    
+else:
+    print("10 is divisible by either 3 or 5")
+```

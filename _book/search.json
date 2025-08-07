@@ -194,7 +194,57 @@
     "href": "control-statements-program-dev.html#loops-with-the-while-statement",
     "title": "2  Control statements and program development",
     "section": "2.5 Loops with the while statement",
-    "text": "2.5 Loops with the while statement\n\nThe while command allows a block of code to be executed a variable number of times\n\n\n2.5.1 Determine when a Netflix subscription will exceed $20\n\nLet’s assume that Netflix will raise the price by 5% after every year",
+    "text": "2.5 Loops with the while statement\n\nThe while command allows a block of code to be executed a variable number of times\n\n\n2.5.1 Determine when a Netflix subscription will exceed $20\n\nLet’s assume that Netflix will raise the price by 5% after every year\n\n\n\n\n\n\n\n\n\n2.5.2 Formatting strings to make numbers more readable\n\nNote the leading f, the {}, and the string formatting character 0.2f and 0d in the above",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#the-for-loop",
+    "href": "control-statements-program-dev.html#the-for-loop",
+    "title": "2  Control statements and program development",
+    "section": "2.6 The for loop",
+    "text": "2.6 The for loop\n\nThe most common type of iteration in Python\nThe for statement allows an action to be executed a fixed number of times\nNB: Python indexes from 0 (not 1)\nThe built-in range(x) function outputs all integers from 0 to x-1",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#iterables-and-lists",
+    "href": "control-statements-program-dev.html#iterables-and-lists",
+    "title": "2  Control statements and program development",
+    "section": "2.7 Iterables and lists",
+    "text": "2.7 Iterables and lists\n\nThe sequence to the right of the for keyword must be an iterable\nThe most common type of iterable in Python is a list:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#augmented-expressions",
+    "href": "control-statements-program-dev.html#augmented-expressions",
+    "title": "2  Control statements and program development",
+    "section": "2.8 Augmented expressions",
+    "text": "2.8 Augmented expressions\n\nAdding and multiplying a set of numbers is a very common operation\nThe operators += and *= facilitate iterative sums and products",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#the-break-and-continue-statements",
+    "href": "control-statements-program-dev.html#the-break-and-continue-statements",
+    "title": "2  Control statements and program development",
+    "section": "2.9 The break and continue statements",
+    "text": "2.9 The break and continue statements\n\nPython exits a while or for loop if it encounters a break statement\nPython moves to the next iteration of the loop if it encounters a continue statement\n\nExample of the break statement:\nrunning_sum = 0\nfor i in range(1000000):\n    num = int(input('Enter a number to add. Enter -1 to stop'))\n    if num!=-1:\n        running_sum += num\n    else:\n        break\n\nprint('The sum of the entered numbers is', running_sum)\n\n\nExample of the continue statement. The following program will only add positive numbers:\nrunning_sum = 0\nfor i in range(1000000):\n    num = int(input('Enter a number to add. Enter 0 to stop'))\n    if num&lt;0:\n        continue\n    elif num==0:\n        break\n    else:\n        running_sum += num\n\nprint(f'The sum of the positive entered numbers is: {running_sum}')",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#logical-operators",
+    "href": "control-statements-program-dev.html#logical-operators",
+    "title": "2  Control statements and program development",
+    "section": "2.10 Logical operators",
+    "text": "2.10 Logical operators\nLogical operators are used on conditional statements (either True or False). They perform Logical AND, Logical OR, and Logical NOT operations.\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\n\n\n\n\nAND\nReturns True if both statements are true\nx &lt; 5 and x &lt; 10\n\n\nOR\nReturns True if one of the statements is true\nx &lt; 5 or x &lt; 4\n\n\nNOT\nReverses the result; False if condition is true\nnot(x &lt; 5 and x &lt; 10)\n\n\n\n\n2.10.1 Example of AND Operator\nThe Logical AND operator returns True if both the operands are True else it returns False.\n\n\n\n\n\n\nExample 2: The code checks if all variables a, b, and c evaluate to True, printing a message accordingly.\n\n\n\n\n\n\n\nNote: If the first expression is evaluated to be false while using the AND operator, then the further expressions are not evaluated.\n\n\n\n2.10.2 Example of OR operator\nThe Logical OR operator returns True if either of the operands is True.\n\n\n\n\n\n\nThe code checks if any of the variables a, b, or c has a boolean value as True; if so, it prints “At least one number has boolean value as True”, otherwise, it prints “All the numbers have boolean value as False”.\n\n\n\n\n\n\n\n\n2.10.3 Example of NOT operator\nThe Logical NOT operator works with a single boolean value. If the boolean value is True it returns False and vice-versa.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
     ]
