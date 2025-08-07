@@ -144,7 +144,7 @@
     "href": "control-statements-program-dev.html#objectives",
     "title": "2  Control statements and program development",
     "section": "",
-    "text": "Decide whether to execute actions with conditional statements if, if … else and if -&gt; elif -&gt; else\nExecute statements repeatedly with for and while.\nShorten assignment expressions with augmented assignments.\nUse the for statement and the built-in range function to repeat actions for a sequence of values.\nPerform sentinel-controlled repetition with while.\nLearn problem-solving skills: understanding problem requirements, dividing problems into\nsmaller pieces, developing algorithms to solve problems and implementing those algorithms in\ncode.\nDevelop algorithms through the process of top-down, step-by-step refinement.\nCreate compound conditions with the Boolean operators and, or and not .\nStop looping with break statements.\nForce the next iteration of a loop with continue .\nUse some functional-style programming features to write scripts that are more concise, clearer, easier to debug and easier to parallelize.",
+    "text": "Decide whether to execute actions with conditional statements if, if ... else and if -&gt; elif -&gt; else\nExecute statements repeatedly with for and while.\nShorten assignment expressions with augmented assignments.\nUse the for statement and the built-in range function to repeat actions for a sequence of values.\nPerform sentinel-controlled repetition with while.\nLearn problem-solving skills: understanding problem requirements, dividing problems into smaller pieces, developing algorithms to solve problems and implementing those algorithms in code.\nDevelop algorithms through the process of top-down, step-by-step refinement.\nCreate compound conditions with the Boolean operators and, or and not .\nStop looping with break statements.\nForce the next iteration of a loop with continue .\nUse some functional-style programming features to write scripts that are more concise, clearer, easier to debug and easier to parallelize",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
     ]
@@ -187,6 +187,16 @@
     "text": "In summary, this book has no content whatsoever.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#loops-with-the-while-statement",
+    "href": "control-statements-program-dev.html#loops-with-the-while-statement",
+    "title": "2  Control statements and program development",
+    "section": "2.5 Loops with the while statement",
+    "text": "2.5 Loops with the while statement\n\nThe while command allows a block of code to be executed a variable number of times\n\n\n2.5.1 Determine when a Netflix subscription will exceed $20\n\nLet’s assume that Netflix will raise the price by 5% after every year",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
     ]
   }
 ]

@@ -10,31 +10,27 @@ packages:
 
 In this module, you’ll learn:
 
--   Decide whether to execute actions with conditional statements if, if ... else and if -\> elif -\> else
-
--   Execute statements repeatedly with for and while.
-
--   Shorten assignment expressions with augmented assignments.
-
--   Use the for statement and the built-in range function to repeat actions for a sequence of values.
-
--   Perform sentinel-controlled repetition with while.
-
--   Learn problem-solving skills: understanding problem requirements, dividing problems into
-
-    smaller pieces, developing algorithms to solve problems and implementing those algorithms in
-
-    code.
-
--   Develop algorithms through the process of top-down, step-by-step refinement.
-
--   Create compound conditions with the Boolean operators and, or and not .
-
--   Stop looping with break statements.
-
--   Force the next iteration of a loop with continue .
-
--   Use some functional-style programming features to write scripts that are more concise, clearer, easier to debug and easier to parallelize.
+- Decide whether to execute actions with conditional statements `if`, `if ... else` and `if -> elif -> else`
+              
+- Execute statements repeatedly with `for` and `while`.
+              
+- Shorten assignment expressions with augmented assignments.
+              
+- Use the `for` statement and the built-in `range` function to repeat actions for a sequence of values.
+              
+- Perform sentinel-controlled repetition with `while`.
+              
+- Learn problem-solving skills: understanding problem requirements, dividing problems into smaller pieces, developing algorithms to solve problems and implementing those algorithms in code.
+              
+- Develop algorithms through the process of top-down, step-by-step refinement.
+              
+- Create compound conditions with the Boolean operators `and`, `or` and `not` .
+              
+- Stop looping with `break` statements.
+              
+- Force the next iteration of a loop with `continue` .
+              
+- Use some functional-style programming features to write scripts that are more concise, clearer, easier to debug and easier to parallelize
 
 ## Control statements
 - Computer programs execute sequentially
@@ -94,4 +90,21 @@ print('x has no remainder when divided into two parts \n')
 x = 36
 y = ('even' if (x%2)==0 else 'odd')
 print(f'y is {y}')
+```
+
+## Loops with the ```while``` statement
+* The ```while``` command allows a block of code to be executed a variable number of times
+
+### Determine when a Netflix subscription will exceed $20
+* Let's assume that Netflix will raise the price by 5% after every year
+
+```{pyodide}
+rate_of_increase = 0.05
+price_of_netflix = 18.99
+year = 2025
+
+while price_of_netflix < 20:
+    print('A Netflix subscription costs', price_of_netflix, 'in', year )
+    year = year + 1
+    price_of_netflix = price_of_netflix * (1 + rate_of_increase)
 ```
