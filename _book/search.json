@@ -248,5 +248,15 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
     ]
+  },
+  {
+    "objectID": "control-statements-program-dev.html#algorithm-development",
+    "href": "control-statements-program-dev.html#algorithm-development",
+    "title": "2  Control statements and program development",
+    "section": "2.11 Algorithm development",
+    "text": "2.11 Algorithm development\nAlgorithms often have three stages:\n\nInitialization of variables\nProcessing or logical implementation\ntermination\n\n\nA Requirements statement specifies the objective of the program\nExample: The nth term in the Fibonacci sequence is defined by adding the previous two terms. Determine the nth term in the sequence for arbitrary n\nAlgorithm\n\nSet F(0):=0\nSet F(1):=1\nRepeat from 2 to n:\n\nF(n) := F(n-1) + F(n-2)\n\nReturn `F(n)\n\n\n\n2.11.1 What is the Fibonacci Sequence?\nThe Fibonacci sequence is a fun way to keep practicing Python. The Fibonacci sequence starts with 0 and 1, with each number being the sum of the two before it. The simplest way to generate it in Python is with a loop:\n\n\n\n\n\n\nThe Fibonacci sequence is a mathematical concept that appears in many areas of science and nature. It is a series of numbers where each number is the sum of the two preceding ones, starting with 0 and 1. This pattern forms the basis for applications in fields like computer science and finance.\nTwo main aspects define the Fibonacci sequence: the recursive structure of the sequence and its relationship with the golden ratio.\nRecall that the Fibonacci sequence starts with 0 and 1. Each new number is the sum of the two numbers before it.\nFor example:\n0 + 1 = 1\n1 + 1 = 2\n1 + 2 = 3\n2 + 3 = 5\n3 + 5 = 8\n5 + 8 = 13 …\nMathematically, we write it as F(n) = F(n-1) + F(n-2). The sequence builds itself by repeatedly adding the last two numbers. The first two numbers, 0 and 1, are the starting point or base cases. Without these, the sequence wouldn’t work.\n\n\n2.11.2 Algorithm refinement\n\nWhen designing algorithms, it is good practice to sketch out the steps in several stages\nThe level of detail increases as you move to the next stage",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
+    ]
   }
 ]

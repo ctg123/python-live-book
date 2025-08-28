@@ -299,3 +299,83 @@ if not (a % 3 == 0 or a % 5 == 0):
 else:
     print("10 is divisible by either 3 or 5")
 ```
+
+## Algorithm development
+
+Algorithms often have three stages:
+
+1. _Initialization of variables_
+2. _Processing or logical implementation_
+3. _termination_
+
+* A _Requirements_ statement specifies the objective of the program
+* Example: _The nth term in the Fibonacci sequence is defined by adding the previous two terms. Determine the nth term in the sequence for arbitrary n_
+* _Algorithm_
+    * Set ```F(0):=0```
+    * Set ```F(1):=1```
+    * Repeat from 2 to n:
+        * ```F(n) := F(n-1) + F(n-2)```
+    * Return ```F(n)``
+
+### What is the Fibonacci Sequence?
+
+The Fibonacci sequence is a fun way to keep practicing Python. The Fibonacci sequence starts with `0` and `1`, with each number being the sum of the two before it. The simplest way to generate it in Python is with a loop:
+
+```{pyodide}
+# Initialization of variables
+n = 10  
+a, b = 0, 1  
+
+# for loop implementation, this will print the first 10 Fibonacci numbers:
+for _ in range(n):  
+    print(a, end=" ")  
+    a, b = b, a + b  
+```
+The Fibonacci sequence is a mathematical concept that appears in many areas of science and nature. It is a series of numbers where each number is the sum of the two preceding ones, starting with 0 and 1. This pattern forms the basis for applications in fields like computer science and finance. 
+
+Two main aspects define the Fibonacci sequence: the recursive structure of the sequence and its relationship with the golden ratio.
+
+Recall that the Fibonacci sequence starts with 0 and 1. Each new number is the sum of the two numbers before it. 
+
+For example:
+
+`0 + 1 = 1`
+
+`1 + 1 = 2`
+
+`1 + 2 = 3`
+
+`2 + 3 = 5`
+
+`3 + 5 = 8`
+
+`5 + 8 = 13` ...
+
+Mathematically, we write it as `F(n) = F(n-1) + F(n-2)`. The sequence builds itself by repeatedly adding the last two numbers. The first two numbers, 0 and 1, are the starting point or base cases. Without these, the sequence wouldn’t work.
+
+### Algorithm _refinement_
+* When designing algorithms, it is good practice to sketch out the steps in several stages
+* The level of detail increases as you move to the next stage
+
+```{pyodide}
+# Initialization
+second_last = 0  # F_0
+last = 1         # F_1
+
+# Input
+n = int(input("Please enter the index (n) of the desired term in the Fibonacci sequence: "))
+
+# Handle small inputs (n = 0 or 1)
+if n == 0:
+    print("The 0th term in the Fibonacci sequence is 0!")
+elif n == 1:
+    print("The 1st term in the Fibonacci sequence is 1!")
+else:
+    # Compute Fibonacci term for n >= 2
+    for i in range(2, n + 1):
+        F_n = second_last + last
+        second_last = last
+        last = F_n
+
+    print(f"The {n}th term in the Fibonacci sequence is {F_n}.")
+```
