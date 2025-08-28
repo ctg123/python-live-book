@@ -1,0 +1,384 @@
+---
+format: live-html
+pyodide:
+packages:
+---
+
+# Functions
+
+## **Objectives**
+
+In this module, you'll learn:
+
+-   How to create custom functions.
+-   Import and use Python Standard Library modules, such as and , to reuse code and avoid “reinventing the wheel.”
+-   Pass data between functions.
+-   Generate a range of random numbers.
+-   Learn simulation techniques using random-number generation.
+-   Pack values into a tuple and unpack values from a tuple.
+-   Return multiple values from a function via a tuple.
+-   Understand how an identifier’s scope determines where in your program you can use it.
+-   Create functions with default parameter values.
+-   Call functions with keyword arguments.
+-   Create functions that can receive any number of arguments.
+-   Use methods of an object.
+
+## Functions are a key ingredient of programs
+
+-   A *function* is a segment of code that provides some desired functionality
+-   Functions are intended to be re-used wherever needed in your programs
+-   It is good practice to write a function for any behavior that may be needed in more than one place of your application
+
+## Functions have inputs and outputs
+
+-   The inputs into a function are called the *arguments* or *parameters*
+-   The outputs are *returned* to the program *calling* the function
+-   Functions essentially pass information between program modules
+
+## Defining Functions
+
+You’ve called many built-in functions (`print`,`input`, `str`, `len`,`range`, etc..) in our previous assignments. Each performed a single, well-defined task. You’ll often define and call custom functions as well.
+
+### Example: `square` function
+
+```{pyodide}
+def square(number):
+    """ Calculate the sqaure root of a number. """
+    return number ** 2
+```
+
+```{pyodide}
+square(7)
+```
+
+```{pyodide}
+square(2.5)
+```
+
+### The Absolute Value Function: `my_abs()`
+
+Let's make our own Python function to find the absolute value of a number! Remember, absolute value is simply a number's distance from zero on the number line, so it's always positive (or zero).
+
+-   The `def` keyword tells Python that you are about to define a function
+-   `my_abs` is the *name* of the function
+-   `x` is the function's *argument* or *parameter*
+-   `()` are required, even if there are no arguments
+
+```{pyodide}
+def my_abs(x):
+    """
+    Calculates the absolute value of a number 'x'.
+    """
+    if x >= 0:  # If x is zero or positive, its distance from zero is just x itself.
+        output = x
+    else:       # If x is negative, its distance from zero is the positive version of x.
+        output = -x # Multiplying a negative by -1 makes it positive! (e.g., -5 * -1 = 5)
+    return output
+```
+
+```{pyodide}
+print(f"The absolute value of 5 is: {my_abs(5)}")     # Output: The absolute value of 5 is: 5
+print(f"The absolute value of -10 is: {my_abs(-10)}") # Output: The absolute value of -10 is: 10
+print(f"The absolute value of 0 is: {my_abs(0)}")     # Output: The absolute value of 0 is: 0
+print(f"The absolute value of -3.14 is: {my_abs(-3.14)}") # Output: The absolute value of -3.14 is: 3.14
+```
+
+## Some functions have no arguments
+
+-   It is not uncommon to construct and employ functions that do not require inputs
+-   Examples:
+    -   fetching the current date or time
+    -   generating a random number
+
+Let's write a function for obtaining the number `pi` to 4 decimal places
+
+```{pyodide}
+def get_pi():
+    output = 3.1415
+    return output
+```
+
+Let's now use this function to compute the area of a circle
+
+```{pyodide}
+radius = 5
+area = get_pi() * (radius**2)
+print(f'The area of a circle with radius {radius:1d} is {area:.2f}')
+```
+
+## Functions with Multiple Parameters: Unit Conversion Examples
+
+It is common for a function to require more than one input to perform meaningful calculations. Let's explore this concept by creating functions that convert between different units of measurement.
+
+Many people around the world use different measurement systems, so conversion functions are very practical. Here are some useful conversion functions:
+
+```{pyodide}
+def convert_in2cm(inches):
+    """Converts a measurement from inches to centimeters.
+
+    Args:
+        inches (float or int): The measurement in inches.
+
+    Returns:
+        float: The equivalent measurement in centimeters.
+    """
+    return inches * 2.54
+
+def convert_lb2kg(pounds):
+    """Converts a weight from pounds to kilograms.
+
+    Args:
+        pounds (float or int): The weight in pounds.
+
+    Returns:
+        float: The equivalent weight in kilograms.
+    """
+    return pounds / (2.2)
+```
+
+Let's measure height and weight with our functions
+
+```{pyodide}
+height_in = int(input("Enter your height in inches: "))
+weight_lb = int(input("Enter your weight in pounds: "))
+```
+
+```{pyodide}
+height_cm = convert_in2cm(height_in)
+weight_kg = convert_lb2kg(weight_lb)
+
+print(f"My height is {height_cm:.2f} cm")
+print(f"My weight is {weight_kg:.2f} kg")
+```
+
+## Random number generation
+
+-   Simulating random events is a powerful computational tool
+    -   E.g.: Forecasting election results, sports outcomes, public health measures
+-   Python provides easy-to-use functions for producing pseudo-random numbers
+    -   In reality, the numbers are generated in a sequence that only emulates randomness
+
+Let's import the `random` module so that we can experiment with random number generation. Calling the module will by default will generate a random number between 0 and 1.
+
+```{pyodide}
+import random
+random.random() # run this multiple times to confirm the randomness
+```
+
+The syntax above states that we are calling the `random()` function from the `random` module.
+
+### randrange
+
+-   The `randrange()` function allows us to generate integers on a specified range
+
+-   Let's generate a number between 1 and 10:
+
+    ```{pyodide}
+    random.randrange(1,11)
+    ```
+
+The first integer is the lower bound argument and the second integer is the upper bound argument
+
+> It is a Python convention to add a 1 to the upper limit of a range.
+
+### Simulating the roll of two dice
+
+-   We can create a function that simulates the outcome of rolling two dice
+
+-   The algorithm is:
+
+    -   \(1\) Roll dice 1 and store the outcome
+
+    -   \(2\) Roll dice 2 and store the outcome
+
+    -   \(3\) Add the two outcomes and return to the user
+
+    ```{pyodide}
+    def roll_two_dice():
+        """ Rolls two six-sided dice and returns the sum of their outcomes.
+
+        This function simulates rolling two standard dice, where each die has
+        faces numbered from 1 to 6. It then calculates and returns the total
+        value obtained from both rolls.
+        """
+        r1 = random.randrange(1,7)   
+        r2 = random.randrange(1,7)
+        return r1+r2
+    ```
+
+```{pyodide}
+roll_two_dice?
+```
+
+```{pyodide}
+roll_two_dice()
+```
+
+### Simulating 10 rolls of two dice
+
+```{pyodide}
+for i in range(10):
+    this_roll = roll_two_dice()
+    print(this_roll)
+```
+
+### Returning multiple outputs via a tuple
+
+```{pyodide}
+def roll_two_dice():
+    r1 = random.randrange(1,7)   
+    r2 = random.randrange(1,7)
+    results = (r1,r2)
+    return results
+```
+
+Roll two dice and get the outcome of each roll ...
+
+```{pyodide}
+my_first_roll, my_second_roll = roll_two_dice()
+print(f'My first roll was {my_first_roll}')
+print(f'My second roll was {my_second_roll}')
+```
+
+-   The number of items in the tuple `my_first_roll, my_second_roll` must match the number of elements in the function's output `results = (r1,r2)`
+
+## Python built-in modules
+
+-   A *module* is a file, ending with `.py`, containing Python functions and variables (i.e., code and data)
+-   The modules that programmers write typically make use of other, pre-existing modules
+-   Code re-use is a key feature of effective programming
+    -   Re-using code eliminated the need for extra work
+    -   Re-using code eliminates the possibility of introducing errors into your program
+
+The **Python Standard Library** provides a set of commonly used general functions pre-installed. Some examples would be `input` and `type` functions. You can learn more at the official documentation source [HERE](https://docs.python.org/3/library/).
+
+### Math module example
+
+The `math` module provides functionality for many mathematical operations. The following snippet imports the math library and demonstrates its usage:
+
+```{pyodide}
+import math
+
+data = random.randrange(0,101)
+sqrt_data = math.sqrt(data)
+print(f'The square root of {data:2d} is {sqrt_data:0.2f}')
+```
+
+The function `sqrt()` of the `math` module computes the square root of any non-negative number.
+
+## Functions with parameter values
+
+-   It is convenient to allow the user to not provide a value for every argument of a function
+
+-   Consider if want `Area`, `perimeter`, `volume`, and `surface area` of a Rectangular Shape. Each function is a simple calculation and return statement. However, area and volume are slightly more complicated because they involve multiple parameters.
+
+$$ A = l \times w $$ $$ P = 2l + 2w $$ $$ V = l \times w \times h $$ $$ SA = 2(lw + lh + wh) $$
+
+```{pyodide}
+def area(length, width):
+    """ Return the product of the length and width """
+    return length * width
+
+def perimeter(length, width):
+    """ Return the sum of the length twice and the width twice """
+    return length * 2 + width * 2
+
+def volume(length, width, height):
+    """ Return the product of the length, width, and height """
+    return length * width * height
+
+def surfaceArea(length, width, height):
+    """ Return the sum of the area of each of the six sides """
+    return ((length * width) + (length * height) + (width * height)) * 2
+```
+
+```{pyodide}
+# Example for Area
+rect_length = 10
+rect_width = 5
+print(f"The area of a rectangle with length {rect_length} and width {rect_width} is: {area(rect_length, rect_width)}")
+
+# Example for Perimeter
+print(f"The perimeter of the same rectangle is: {perimeter(rect_length, rect_width)}")
+
+# Example for Volume
+box_length = 4
+box_width = 3
+box_height = 2
+print(f"The volume of a box with length {box_length}, width {box_width}, and height {box_height} is: {volume(box_length, box_width, box_height)}")
+
+# Example for Surface Area
+print(f"The surface area of the same box is: {surfaceArea(box_length, box_width, box_height)}")
+```
+
+## Arguments may be passed *by value* or *by reference*
+
+-   Passing by value means that we are giving the function a *copy* of the variable
+-   Passing by reference means that we are giving the function the ability to modify that variable directly
+-   *Python always passes by reference*
+
+## Keyword Arguments: Pizza Orders Example
+
+Imagine you're calling a pizza place, and they ask for a bunch of details like size, crust, toppings, etc. Sometimes you want a specific order, other times you just want the basics. Keyword arguments help us give instructions to our Python functions in a clear way, without worrying about the exact order.
+
+### How It Works
+
+When you define a function, you can specify the value where the argument goes. With keyword arguments, instead of just putting a value by its position, you actually say `argument_name=value`.
+
+*Think of it like this:*
+
+-   *Positional*: "I want large, thin crust." (You're relying on the pizza place knowing 'large' is the size and 'thin crust' is the type of crust just by the order you say them.)
+-   *Keyword:* "I want `size=large`, `crust=thin_crust`." (You're explicitly telling them which detail is which.)
+
+The cool part? When you use keywords, you can say them in any order!
+
+Let's make a function that "orders" a pizza. We'll make size and crust required, but toppings and extra cheese can be optional.
+
+```{pyodide}
+def order_pizza(size, crust, toppings="pepperoni", extra_cheese=False):
+    """
+    Simulates ordering a pizza with specified size, crust, toppings, and extra cheese.
+
+    Args:
+        size (str): The size of the pizza (e.g., "small", "medium", "large").
+        crust (str): The type of crust (e.g., "thin", "thick", "stuffed").
+        toppings (str): The primary topping. Defaults to "pepperoni".
+        extra_cheese (bool): Whether to add extra cheese. Defaults to False.
+    """
+    print("--- Your Pizza Order ---")
+    print(f"Size: {size}")
+    print(f"Crust: {crust}")
+    print(f"Toppings: {toppings}")
+    print(f"Extra Cheese: {'Yes' if extra_cheese else 'No'}")
+    print("------------------------\n")
+```
+
+```{pyodide}
+# Let's make some pizza orders
+print("Order 1: The Classic (Using only positional arguments)")
+# Python knows "medium" is size, "hand-tossed" is crust because of their order.
+order_pizza("medium", "hand-tossed")
+```
+
+```{pyodide}
+print("Order 2: Custom Topping (Using a mix of positional and keyword)")
+# "large" is size, "thin" is crust.
+# We explicitly say 'toppings="mushrooms"' using a keyword.
+order_pizza("large", "thin", toppings="mushrooms")
+```
+
+```{pyodide}
+print("Order 3: Extra Cheese Please! (Using keyword for optional args)")
+# Again, "medium" is size, "thick" is crust.
+# We explicitly say 'extra_cheese=True' using a keyword.
+order_pizza("medium", "thick", extra_cheese=True)
+```
+
+```{print("Order 4: Complete Customization (Using ALL keyword arguments - Order DOES NOT MATTER!)")}
+# Notice how we can put `crust` before `size`, or `extra_cheese` first.
+# Python matches them up because we're using the names!
+order_pizza(extra_cheese=True, toppings="olives", crust="stuffed", size="large")
+
+print("Order 5: Another full custom order, different order of keywords")
+order_pizza(crust="deep-dish", size="small", extra_cheese=False, toppings="sausage"){pyodide}
+```

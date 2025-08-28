@@ -258,5 +258,125 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Control statements and program development</span>"
     ]
+  },
+  {
+    "objectID": "functions.html",
+    "href": "functions.html",
+    "title": "3  Functions",
+    "section": "",
+    "text": "3.1 Objectives\nIn this module, you’ll learn:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#functions-are-a-key-ingredient-of-programs",
+    "href": "functions.html#functions-are-a-key-ingredient-of-programs",
+    "title": "3  Functions",
+    "section": "3.2 Functions are a key ingredient of programs",
+    "text": "3.2 Functions are a key ingredient of programs\n\nA function is a segment of code that provides some desired functionality\nFunctions are intended to be re-used wherever needed in your programs\nIt is good practice to write a function for any behavior that may be needed in more than one place of your application",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#functions-have-inputs-and-outputs",
+    "href": "functions.html#functions-have-inputs-and-outputs",
+    "title": "3  Functions",
+    "section": "3.3 Functions have inputs and outputs",
+    "text": "3.3 Functions have inputs and outputs\n\nThe inputs into a function are called the arguments or parameters\nThe outputs are returned to the program calling the function\nFunctions essentially pass information between program modules",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#defining-functions",
+    "href": "functions.html#defining-functions",
+    "title": "3  Functions",
+    "section": "3.4 Defining Functions",
+    "text": "3.4 Defining Functions\nYou’ve called many built-in functions (print,input, str, len,range, etc..) in our previous assignments. Each performed a single, well-defined task. You’ll often define and call custom functions as well.\n\n3.4.1 Example: square function\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.4.2 The Absolute Value Function: my_abs()\nLet’s make our own Python function to find the absolute value of a number! Remember, absolute value is simply a number’s distance from zero on the number line, so it’s always positive (or zero).\n\nThe def keyword tells Python that you are about to define a function\nmy_abs is the name of the function\nx is the function’s argument or parameter\n() are required, even if there are no arguments",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#some-functions-have-no-arguments",
+    "href": "functions.html#some-functions-have-no-arguments",
+    "title": "3  Functions",
+    "section": "3.5 Some functions have no arguments",
+    "text": "3.5 Some functions have no arguments\n\nIt is not uncommon to construct and employ functions that do not require inputs\nExamples:\n\nfetching the current date or time\ngenerating a random number\n\n\nLet’s write a function for obtaining the number pi to 4 decimal places\n\n\n\n\n\n\nLet’s now use this function to compute the area of a circle",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#functions-with-multiple-parameters-unit-conversion-examples",
+    "href": "functions.html#functions-with-multiple-parameters-unit-conversion-examples",
+    "title": "3  Functions",
+    "section": "3.6 Functions with Multiple Parameters: Unit Conversion Examples",
+    "text": "3.6 Functions with Multiple Parameters: Unit Conversion Examples\nIt is common for a function to require more than one input to perform meaningful calculations. Let’s explore this concept by creating functions that convert between different units of measurement.\nMany people around the world use different measurement systems, so conversion functions are very practical. Here are some useful conversion functions:\n\n\n\n\n\n\nLet’s measure height and weight with our functions",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#random-number-generation",
+    "href": "functions.html#random-number-generation",
+    "title": "3  Functions",
+    "section": "3.7 Random number generation",
+    "text": "3.7 Random number generation\n\nSimulating random events is a powerful computational tool\n\nE.g.: Forecasting election results, sports outcomes, public health measures\n\nPython provides easy-to-use functions for producing pseudo-random numbers\n\nIn reality, the numbers are generated in a sequence that only emulates randomness\n\n\nLet’s import the random module so that we can experiment with random number generation. Calling the module will by default will generate a random number between 0 and 1.\n\n\n\n\n\n\nThe syntax above states that we are calling the random() function from the random module.\n\n3.7.1 randrange\n\nThe randrange() function allows us to generate integers on a specified range\nLet’s generate a number between 1 and 10:\n\n\n\n\n\n\n\nThe first integer is the lower bound argument and the second integer is the upper bound argument\n\nIt is a Python convention to add a 1 to the upper limit of a range.\n\n\n\n3.7.2 Simulating the roll of two dice\n\nWe can create a function that simulates the outcome of rolling two dice\nThe algorithm is:\n\n(1) Roll dice 1 and store the outcome\n(2) Roll dice 2 and store the outcome\n(3) Add the two outcomes and return to the user\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.7.3 Simulating 10 rolls of two dice\n\n\n\n\n\n\n\n\n3.7.4 Returning multiple outputs via a tuple\n\n\n\n\n\n\nRoll two dice and get the outcome of each roll …\n\n\n\n\n\n\n\nThe number of items in the tuple my_first_roll, my_second_roll must match the number of elements in the function’s output results = (r1,r2)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#python-built-in-modules",
+    "href": "functions.html#python-built-in-modules",
+    "title": "3  Functions",
+    "section": "3.8 Python built-in modules",
+    "text": "3.8 Python built-in modules\n\nA module is a file, ending with .py, containing Python functions and variables (i.e., code and data)\nThe modules that programmers write typically make use of other, pre-existing modules\nCode re-use is a key feature of effective programming\n\nRe-using code eliminated the need for extra work\nRe-using code eliminates the possibility of introducing errors into your program\n\n\nThe Python Standard Library provides a set of commonly used general functions pre-installed. Some examples would be input and type functions. You can learn more at the official documentation source HERE.\n\n3.8.1 Math module example\nThe math module provides functionality for many mathematical operations. The following snippet imports the math library and demonstrates its usage:\n\n\n\n\n\n\nThe function sqrt() of the math module computes the square root of any non-negative number.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#objectives",
+    "href": "functions.html#objectives",
+    "title": "3  Functions",
+    "section": "",
+    "text": "How to create custom functions.\nImport and use Python Standard Library modules, such as and , to reuse code and avoid “reinventing the wheel.”\nPass data between functions.\nGenerate a range of random numbers.\nLearn simulation techniques using random-number generation.\nPack values into a tuple and unpack values from a tuple.\nReturn multiple values from a function via a tuple.\nUnderstand how an identifier’s scope determines where in your program you can use it.\nCreate functions with default parameter values.\nCall functions with keyword arguments.\nCreate functions that can receive any number of arguments.\nUse methods of an object.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#functions-with-parameter-values",
+    "href": "functions.html#functions-with-parameter-values",
+    "title": "3  Functions",
+    "section": "3.9 Functions with parameter values",
+    "text": "3.9 Functions with parameter values\n\nIt is convenient to allow the user to not provide a value for every argument of a function\nConsider if want Area, perimeter, volume, and surface area of a Rectangular Shape. Each function is a simple calculation and return statement. However, area and volume are slightly more complicated because they involve multiple parameters.\n\n\\[ A = l \\times w \\] \\[ P = 2l + 2w \\] \\[ V = l \\times w \\times h \\] \\[ SA = 2(lw + lh + wh) \\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#arguments-may-be-passed-by-value-or-by-reference",
+    "href": "functions.html#arguments-may-be-passed-by-value-or-by-reference",
+    "title": "3  Functions",
+    "section": "3.10 Arguments may be passed by value or by reference",
+    "text": "3.10 Arguments may be passed by value or by reference\n\nPassing by value means that we are giving the function a copy of the variable\nPassing by reference means that we are giving the function the ability to modify that variable directly\nPython always passes by reference",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#keyword-arguments-pizza-orders-example",
+    "href": "functions.html#keyword-arguments-pizza-orders-example",
+    "title": "3  Functions",
+    "section": "3.11 Keyword Arguments: Pizza Orders Example",
+    "text": "3.11 Keyword Arguments: Pizza Orders Example\nImagine you’re calling a pizza place, and they ask for a bunch of details like size, crust, toppings, etc. Sometimes you want a specific order, other times you just want the basics. Keyword arguments help us give instructions to our Python functions in a clear way, without worrying about the exact order.\n\n3.11.1 How It Works\nWhen you define a function, you can specify the value where the argument goes. With keyword arguments, instead of just putting a value by its position, you actually say argument_name=value.\nThink of it like this:\n\nPositional: “I want large, thin crust.” (You’re relying on the pizza place knowing ‘large’ is the size and ‘thin crust’ is the type of crust just by the order you say them.)\nKeyword: “I want size=large, crust=thin_crust.” (You’re explicitly telling them which detail is which.)\n\nThe cool part? When you use keywords, you can say them in any order!\nLet’s make a function that “orders” a pizza. We’ll make size and crust required, but toppings and extra cheese can be optional.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Notice how we can put `crust` before `size`, or `extra_cheese` first.\n# Python matches them up because we're using the names!\norder_pizza(extra_cheese=True, toppings=\"olives\", crust=\"stuffed\", size=\"large\")\n\nprint(\"Order 5: Another full custom order, different order of keywords\")\norder_pizza(crust=\"deep-dish\", size=\"small\", extra_cheese=False, toppings=\"sausage\"){pyodide}",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
   }
 ]

@@ -16,7 +16,7 @@ book:
     - index.qmd
     - intro.qmd
     - control-statements-program-dev.qmd
-    - summary.qmd
+    - functions.qmd
     - references.qmd
 
 bibliography: references.bib
