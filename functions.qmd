@@ -374,11 +374,87 @@ print("Order 3: Extra Cheese Please! (Using keyword for optional args)")
 order_pizza("medium", "thick", extra_cheese=True)
 ```
 
-```{print("Order 4: Complete Customization (Using ALL keyword arguments - Order DOES NOT MATTER!)")}
+```{pyodide}
+print("Order 4: Complete Customization (Using ALL keyword arguments - Order DOES NOT MATTER!)")
 # Notice how we can put `crust` before `size`, or `extra_cheese` first.
 # Python matches them up because we're using the names!
 order_pizza(extra_cheese=True, toppings="olives", crust="stuffed", size="large")
 
 print("Order 5: Another full custom order, different order of keywords")
-order_pizza(crust="deep-dish", size="small", extra_cheese=False, toppings="sausage"){pyodide}
+order_pizza(crust="deep-dish", size="small", extra_cheese=False, toppings="sausage")
+```
+
+## Functions that belong to objects
+
+-   The term method refers to a function that belongs to an **object**.
+
+<!-- -->
+
+-   To illustrate this, consider the conversion of a string to ALL CAPS
+
+```{pyodide}
+my_name = 'John'
+my_name.upper()
+```
+
+### The scope of a variable
+
+-   A variable exists in a *scope*
+-   The scope may be *local* or *global*
+-   A variable that is defined inside of function has a local scope
+-   A variable that is defined outside of a function has a global scope
+
+```{pyodide}
+my_global_name = 'John'
+
+def convert_to_all_cap(name):
+    my_local_name = name
+    return name.upper()
+```
+
+-   We can access a global variable inside of a function
+
+```{pyodide}
+print(my_global_name)
+```
+
+-   We cannot access a local variable outside of a function
+
+```{pyodide}
+print(my_local_name)
+```
+
+### Global variables cannot be modified inside of a function
+
+-   Python will allow this, but a *new* variable is created
+
+```{pyodide}
+my_global_name= 'John'
+
+def convert_to_all_cap():
+    my_global_name = 'Michael' # trying to modify a global variable
+    return my_global_name.upper()
+```
+
+```{pyodide}
+print(convert_to_all_cap()) 
+print(my_global_name)
+```
+
+-   Notice that `my_global_name` only temporarily changes value inside the `convert_to_all_cap` function
+
+### The `global` keyword tells Python that a variable has been defined in global scope
+
+```{pyodide}
+my_global_name= 'John'
+
+def convert_to_all_cap():
+    global my_global_name
+    my_global_name = 'Michael' # trying to modify a global variable
+    return my_global_name.upper()
+```
+
+```{pyodide}
+print(convert_to_all_cap()) 
+print(my_global_name)
 ```

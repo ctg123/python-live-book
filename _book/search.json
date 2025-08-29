@@ -180,16 +180,6 @@
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "3  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
     "objectID": "control-statements-program-dev.html#loops-with-the-while-statement",
     "href": "control-statements-program-dev.html#loops-with-the-while-statement",
     "title": "2  Control statements and program development",
@@ -270,6 +260,16 @@
     ]
   },
   {
+    "objectID": "functions.html#objectives",
+    "href": "functions.html#objectives",
+    "title": "3  Functions",
+    "section": "",
+    "text": "How to create custom functions.\nImport and use Python Standard Library modules, such as and , to reuse code and avoid “reinventing the wheel.”\nPass data between functions.\nGenerate a range of random numbers.\nLearn simulation techniques using random-number generation.\nPack values into a tuple and unpack values from a tuple.\nReturn multiple values from a function via a tuple.\nUnderstand how an identifier’s scope determines where in your program you can use it.\nCreate functions with default parameter values.\nCall functions with keyword arguments.\nCreate functions that can receive any number of arguments.\nUse methods of an object.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
     "objectID": "functions.html#functions-are-a-key-ingredient-of-programs",
     "href": "functions.html#functions-are-a-key-ingredient-of-programs",
     "title": "3  Functions",
@@ -340,16 +340,6 @@
     ]
   },
   {
-    "objectID": "functions.html#objectives",
-    "href": "functions.html#objectives",
-    "title": "3  Functions",
-    "section": "",
-    "text": "How to create custom functions.\nImport and use Python Standard Library modules, such as and , to reuse code and avoid “reinventing the wheel.”\nPass data between functions.\nGenerate a range of random numbers.\nLearn simulation techniques using random-number generation.\nPack values into a tuple and unpack values from a tuple.\nReturn multiple values from a function via a tuple.\nUnderstand how an identifier’s scope determines where in your program you can use it.\nCreate functions with default parameter values.\nCall functions with keyword arguments.\nCreate functions that can receive any number of arguments.\nUse methods of an object.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
-    ]
-  },
-  {
     "objectID": "functions.html#functions-with-parameter-values",
     "href": "functions.html#functions-with-parameter-values",
     "title": "3  Functions",
@@ -374,7 +364,17 @@
     "href": "functions.html#keyword-arguments-pizza-orders-example",
     "title": "3  Functions",
     "section": "3.11 Keyword Arguments: Pizza Orders Example",
-    "text": "3.11 Keyword Arguments: Pizza Orders Example\nImagine you’re calling a pizza place, and they ask for a bunch of details like size, crust, toppings, etc. Sometimes you want a specific order, other times you just want the basics. Keyword arguments help us give instructions to our Python functions in a clear way, without worrying about the exact order.\n\n3.11.1 How It Works\nWhen you define a function, you can specify the value where the argument goes. With keyword arguments, instead of just putting a value by its position, you actually say argument_name=value.\nThink of it like this:\n\nPositional: “I want large, thin crust.” (You’re relying on the pizza place knowing ‘large’ is the size and ‘thin crust’ is the type of crust just by the order you say them.)\nKeyword: “I want size=large, crust=thin_crust.” (You’re explicitly telling them which detail is which.)\n\nThe cool part? When you use keywords, you can say them in any order!\nLet’s make a function that “orders” a pizza. We’ll make size and crust required, but toppings and extra cheese can be optional.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Notice how we can put `crust` before `size`, or `extra_cheese` first.\n# Python matches them up because we're using the names!\norder_pizza(extra_cheese=True, toppings=\"olives\", crust=\"stuffed\", size=\"large\")\n\nprint(\"Order 5: Another full custom order, different order of keywords\")\norder_pizza(crust=\"deep-dish\", size=\"small\", extra_cheese=False, toppings=\"sausage\"){pyodide}",
+    "text": "3.11 Keyword Arguments: Pizza Orders Example\nImagine you’re calling a pizza place, and they ask for a bunch of details like size, crust, toppings, etc. Sometimes you want a specific order, other times you just want the basics. Keyword arguments help us give instructions to our Python functions in a clear way, without worrying about the exact order.\n\n3.11.1 How It Works\nWhen you define a function, you can specify the value where the argument goes. With keyword arguments, instead of just putting a value by its position, you actually say argument_name=value.\nThink of it like this:\n\nPositional: “I want large, thin crust.” (You’re relying on the pizza place knowing ‘large’ is the size and ‘thin crust’ is the type of crust just by the order you say them.)\nKeyword: “I want size=large, crust=thin_crust.” (You’re explicitly telling them which detail is which.)\n\nThe cool part? When you use keywords, you can say them in any order!\nLet’s make a function that “orders” a pizza. We’ll make size and crust required, but toppings and extra cheese can be optional.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "functions.html#functions-that-belong-to-objects",
+    "href": "functions.html#functions-that-belong-to-objects",
+    "title": "3  Functions",
+    "section": "3.12 Functions that belong to objects",
+    "text": "3.12 Functions that belong to objects\n\nThe term method refers to a function that belongs to an object.\n\n\n\nTo illustrate this, consider the conversion of a string to ALL CAPS\n\n\n\n\n\n\n\n\n3.12.1 The scope of a variable\n\nA variable exists in a scope\nThe scope may be local or global\nA variable that is defined inside of function has a local scope\nA variable that is defined outside of a function has a global scope\n\n\n\n\n\n\n\n\nWe can access a global variable inside of a function\n\n\n\n\n\n\n\n\nWe cannot access a local variable outside of a function\n\n\n\n\n\n\n\n\n\n3.12.2 Global variables cannot be modified inside of a function\n\nPython will allow this, but a new variable is created\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that my_global_name only temporarily changes value inside the convert_to_all_cap function\n\n\n\n3.12.3 The global keyword tells Python that a variable has been defined in global scope",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
     ]
